@@ -2,7 +2,8 @@ import random
 
 class Utilities:
     
+    gesture_list = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
+
     @staticmethod
-    def list_of_choices():
-        choice_list = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
-        return choice_list
+    def display_rules():
+        print('Rules')

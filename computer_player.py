@@ -12,7 +12,7 @@ class ComputerPlayer(Player):
         self.name = random.choice(comp_name_list)
         
     def choose_gesture(self):
-        gesture = random.choice(Utilities.list_of_choices)
+        gesture = random.choice(Utilities.gesture_list)
         print(gesture)
         return gesture
 
