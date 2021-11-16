@@ -8,9 +8,15 @@ class ComputerPlayer(Player):
         self.set_computer_name()
     
     def set_computer_name(self):
-        self.name = Utilities.choose_computer_name()
+        comp_name_list = ['Harry', 'Ron', 'Hermione', 'Crookshanks']
+        self.name = random.choice(comp_name_list)
         
     def choose_gesture(self):
-        gesture = input('Please input gesture: ')
-        gesture_valid = False
-        
+        gesture = random.choice(Utilities.list_of_choices)
+        print(gesture)
+        return gesture
+
+computer_one = ComputerPlayer()
+print(computer_one.name)
+
+computer_one.choose_gesture()
