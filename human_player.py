@@ -21,7 +21,4 @@ class HumanPlayer(Player):
         print(gesture) #used to double check gesture was chosen
         return gesture
 
-player_one = HumanPlayer()
-print(player_one.name)
 
-player_one.choose_gesture()

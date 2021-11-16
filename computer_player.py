@@ -15,8 +15,3 @@ class ComputerPlayer(Player):
         gesture = random.choice(Utilities.gesture_list)
         print(gesture)
         return gesture
-
-computer_one = ComputerPlayer()
-print(computer_one.name)
-
-computer_one.choose_gesture()
