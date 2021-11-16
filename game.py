@@ -32,8 +32,11 @@ class PlayGame:
                 num_players_valid = True
         
     def play_game(self):
-        pass
-        #for round in range(3):
+        for round in range(3):
+            player_one_gesture = self.player_one.choose_gesture()
+            player_two_gesture = self.player_two.choose_gesture()
+            
+           
             
         
     
