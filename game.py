@@ -2,6 +2,7 @@ from computer_player import ComputerPlayer
 from human_player import HumanPlayer
 from utilities import Utilities
 
+#^ This class holds the gameplay, which runs through a large loop to determine the winner
 
 class PlayGame:
     def __init__(self):
@@ -10,6 +11,8 @@ class PlayGame:
         self.player_two = ''
         self.get_players()
     
+    #! Takes the user input for either one or two players and runs the loops accordingly
+        
     def get_players(self):
         num_players_valid = False
         
@@ -29,6 +32,8 @@ class PlayGame:
                 self.player_two = ComputerPlayer()
                 print(f'Player Two Name: {self.player_two.name}')
                 num_players_valid = True
+        
+    #& A very large and somewhat redundant loop that will be cleaned up, but for the moment functions in printing the correct results for each input possibility
         
     def play_game(self):
         while self.player_one.score < 2 and self.player_two.score < 2:
@@ -110,6 +115,8 @@ class PlayGame:
                     self.player_two.score += 1       
             
             print(f"Player One Score {self.player_one.score}, Player Two Score {self.player_two.score}")
+       
+       #* Best two out of three wins
         
         if self.player_one.score == 2:
             print("Player One Wins!")
