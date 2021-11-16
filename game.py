@@ -122,7 +122,3 @@ class PlayGame:
             print("Player One Wins!")
         elif self.player_two.score == 2:
             print("Player Two Wins!")   
-
-            
-        
-    
