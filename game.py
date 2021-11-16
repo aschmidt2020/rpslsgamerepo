@@ -1,4 +1,3 @@
-from _typeshed import Self
 from computer_player import ComputerPlayer
 from human_player import HumanPlayer
 from utilities import Utilities
@@ -32,11 +31,91 @@ class PlayGame:
                 num_players_valid = True
         
     def play_game(self):
-        for round in range(3):
+        while self.player_one.score < 2 and self.player_two.score < 2:
+            print("Player One")
             player_one_gesture = self.player_one.choose_gesture()
+            print("Player Two")
             player_two_gesture = self.player_two.choose_gesture()
             
-           
+            if player_one_gesture == player_two_gesture:
+                    print("Tie")
+            elif player_one_gesture == "Rock":
+                if player_two_gesture == "Scissors":
+                    print("Rock Breaks Scissors")
+                    self.player_one.score += 1
+                elif player_two_gesture == "Paper":
+                    print("Paper Covers Rock")
+                    self.player_two.score += 1
+                elif player_two_gesture == "Lizard":
+                    print("Rock Crushes Lizard!")
+                    self.player_one.score += 1
+                elif player_two_gesture == "Spock":
+                    print("Spock Vaporizes Rock!")
+                    self.player_two.score += 1
+                    
+            elif player_one_gesture == "Paper":
+                if player_two_gesture == "Rock":
+                    print("Paper Covers Rock!")
+                    self.player_one.score += 1
+                elif player_two_gesture == "Scissors":
+                    print("Scissors Cuts Paper!")
+                    self.player_two.score += 1
+                elif player_two_gesture == "Spock":
+                    print("Paper Disproves Spock")
+                    self.player_one.score += 1
+                elif player_two_gesture == "Lizard":
+                    print("Lizard Eats Paper!")
+                    self.player_two.score += 1
+                
+            elif player_one_gesture == "Scissors":
+                if player_two_gesture == "Paper":
+                    print("Scissors Cut Paper!")
+                    self.player_one.score += 1
+                elif player_two_gesture == "Rock":
+                    print("Rock Crushes Scissors!")
+                    self.player_two.score += 1
+                elif player_two_gesture == "Lizard":
+                    print("Scissors Decapitate Lizard!")
+                    self.player_one.score += 1
+                elif player_two_gesture == "Spock":
+                    print("Spock Smashes Scissors")
+                    self.player_two.score += 1       
+        
+            elif player_one_gesture == "Spock":
+                if player_two_gesture == "Rock":
+                    print("Spock Vaporizes Rock!")
+                    self.player_one.score += 1
+                elif player_two_gesture == "Paper":
+                    print("Paper Disproves Spock!")
+                    self.player_two.score += 1
+                elif player_two_gesture == "Scissors":
+                    print("Spock Smashes Scissors")
+                    self.player_one.score += 1
+                elif player_two_gesture == "Lizard":
+                    print("Lizard Poisons Spock!")
+                    self.player_two.score += 1       
+        
+            elif player_one_gesture == "Lizard":
+                if player_two_gesture == "Paper":
+                    print("Lizard Eats Paper!")
+                    self.player_one.score += 1
+                elif player_two_gesture == "Rock":
+                    print("Rock Crushes Lizard!")
+                    self.player_two.score += 1
+                elif player_two_gesture == "Spock":
+                    print("Lizard Poisons Spock")
+                    self.player_one.score += 1
+                elif player_two_gesture == "Scissors":
+                    print("Scissors Decapitate Lizard!")
+                    self.player_two.score += 1       
+            
+            print(f"Player One Score {self.player_one.score}, Player Two Score {self.player_two.score}")
+        
+        if self.player_one.score == 2:
+            print("Player One Wins!")
+        elif self.player_two.score == 2:
+            print("Player Two Wins!")   
+
             
         
     
