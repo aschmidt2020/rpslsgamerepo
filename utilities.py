@@ -12,3 +12,4 @@ class Utilities:
         comp_name_list = ['Harry', 'Ron', 'Hermione', 'Crookshanks']
         comp_name = random.choice(comp_name_list)
         return comp_name
+  
