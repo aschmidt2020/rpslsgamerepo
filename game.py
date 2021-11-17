@@ -63,7 +63,7 @@ class PlayGame:
             
             print('\nRound Result: ')
             
-            round_winner = Gestures.gesture_win_or_lose(player_one_gesture, player_two_gesture)
+            round_winner = Gestures.array_reader(player_one_gesture, player_two_gesture)
             
             if round_winner == 'Player 1':
                 self.player_one.score +=1

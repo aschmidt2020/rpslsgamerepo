@@ -1,6 +1,6 @@
 class Utilities:
     
-    gesture_list = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
+    gesture_list = {0: 'Rock', 1: 'Paper', 2: 'Scissors', 3: 'Lizard', 4: 'Spock'}
 
     @staticmethod
     def display_rules():

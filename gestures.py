@@ -1,4 +1,31 @@
+from utilities import Utilities
 class Gestures:
+    
+    @staticmethod    
+    #^ First row in array is rock, Paper, Scissors, Liard, Spock
+    def array_reader(player_one_gesture, player_two_gesture):
+        
+        rpsls_table = [[-1, 1, 0, 0, 4], 
+                       [1, -1, 2, 3, 1], 
+                       [0, 2, -1, 2, 4], 
+                       [0, 3, 2, -1, 3], 
+                       [4, 1, 4, 3, -1]]
+        
+        player_one = Utilities.gesture_list.index(player_one_gesture)
+        player_two = Utilities.gesture_list.index(player_two_gesture)
+        rpsls_table[player_one] [player_two]
+        
+        if rpsls_table[player_one] [player_two] == -1:
+            print("Tie")
+        elif rpsls_table[player_one] [player_two] == 1:
+            print("Win")
+        elif rpsls_table[player_one] [player_two] == 0:
+            print("Loss")
+        elif rpsls_table[player_one] [player_two] == :
+            pass
+        elif rpsls_table[player_one] [player_two] == :
+            pass
+    
     
     @staticmethod
     def gesture_win_or_lose(player_one_gesture, player_two_gesture):
