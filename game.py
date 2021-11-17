@@ -65,11 +65,11 @@ class PlayGame:
             
             round_winner = Gestures.array_reader(player_one_gesture, player_two_gesture)
             
-            if round_winner == 'Player 1':
+            if round_winner == 1:
                 self.player_one.score +=1
-            elif round_winner == 'Player 2':
+            elif round_winner == 2:
                 self.player_two.score += 1
-            elif round_winner == 'No one wins':
+            elif round_winner == -1:
                 continue
                   
             print(f"   {self.player_one.name}'s score: {self.player_one.score}, {self.player_two.name}'s score: {self.player_two.score}")

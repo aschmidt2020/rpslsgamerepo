@@ -5,26 +5,62 @@ class Gestures:
     #^ First row in array is rock, Paper, Scissors, Liard, Spock
     def array_reader(player_one_gesture, player_two_gesture):
         
+                      #player 2 
         rpsls_table = [[-1, 1, 0, 0, 4], 
                        [1, -1, 2, 3, 1], 
                        [0, 2, -1, 2, 4], 
                        [0, 3, 2, -1, 3], 
                        [4, 1, 4, 3, -1]]
         
-        player_one = Utilities.gesture_list.index(player_one_gesture)
-        player_two = Utilities.gesture_list.index(player_two_gesture)
-        rpsls_table[player_one] [player_two]
+        if player_one_gesture == 'Rock':
+            player_one = 0
+        elif player_one_gesture == 'Paper':
+            player_one = 1
+        elif player_one_gesture == 'Scissors':
+            player_one = 2
+        elif player_one_gesture == 'Lizard':
+            player_one = 3
+        elif player_one_gesture == 'Spock':
+            player_one = 4
+            
+        if player_two_gesture == 'Rock':
+            player_two = 0
+        elif player_two_gesture == 'Paper':
+            player_two = 1
+        elif player_two_gesture == 'Scissors':
+            player_two = 2
+        elif player_two_gesture == 'Lizard':
+            player_two = 3
+        elif player_two_gesture == 'Spock':
+            player_two = 4
+            
+        winner = rpsls_table[player_one][player_two]
         
-        if rpsls_table[player_one] [player_two] == -1:
-            print("Tie")
-        elif rpsls_table[player_one] [player_two] == 1:
-            print("Win")
-        elif rpsls_table[player_one] [player_two] == 0:
-            print("Loss")
-        elif rpsls_table[player_one] [player_two] == :
-            pass
-        elif rpsls_table[player_one] [player_two] == :
-            pass
+        if winner == -1:
+            print('This is a tie.')
+        elif winner == player_one:
+            print('Player 1 winds this round')
+            winner = 1
+        elif winner == player_two:
+            print('Player two wins this round')
+            winner = 2
+            
+        return winner
+            
+        
+                        #row            #column
+    #    # if rpsls_table[player_one][player_two] == -1:
+    #     #    print("Tie")
+    #   # elif rpsls_table[player_one][player_two] == 1:
+            
+    #         winner = 
+    #     elif rpsls_table[player_one][player_two] == 2:
+    #         print("Rock crushes scissors")
+    #         winner = player_one
+    #     elif rpsls_table[player_one][player_two] == :
+    #         pass
+    #     elif rpsls_table[player_one][player_two] == :
+    #         pass
     
     
     @staticmethod
