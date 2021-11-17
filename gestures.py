@@ -1,11 +1,20 @@
-from utilities import Utilities
+# from utilities import Utilities
 class Gestures:
     
+    #* Array reader method scans through an array of verbs then the numbered variables to determine the winner of each round
+    
     @staticmethod    
-    #^ First row in array is rock, Paper, Scissors, Liard, Spock
     def array_reader(player_one_gesture, player_two_gesture):
         
-                      #player 2 
+        #^ First row in array is rock, Paper, Scissors, Lizard, Spock
+        #& player_one is the x axis and player_two is y axis 
+        
+        rpsls_statements = [["Tie", "Covers", "Crushes", "Crushes", "Vaporizes"], 
+                            ["Covers", "Tie", "Cuts", "Eats", "Disproves"], 
+                            ["Crushes", "Cuts", "Tie", "Decapitates", "Smashes"], 
+                            ["Crushes", "Eats", "Decapitates", "Tie", "Poisons"], 
+                            ["Vaporizes", "Disproves", "Smashes", "Poisons", "Tie"]]
+        
         rpsls_table = [[-1, 1, 0, 0, 4], 
                        [1, -1, 2, 3, 1], 
                        [0, 2, -1, 2, 4], 
@@ -35,110 +44,17 @@ class Gestures:
             player_two = 4
             
         winner = rpsls_table[player_one][player_two]
+        winner_verb = rpsls_statements[player_one][player_two]
+        
+        #! Interpolates who wins and prints the results with the correct verbiage, while also ticking up the score.
         
         if winner == -1:
             print('This is a tie.')
         elif winner == player_one:
-            print('Player 1 winds this round')
+            print(f"   {player_one_gesture} {winner_verb} {player_two_gesture}")
             winner = 1
         elif winner == player_two:
-            print('Player two wins this round')
+            print(f"   {player_two_gesture} {winner_verb} {player_one_gesture}")
             winner = 2
             
-        return winner
-            
-        
-                        #row            #column
-    #    # if rpsls_table[player_one][player_two] == -1:
-    #     #    print("Tie")
-    #   # elif rpsls_table[player_one][player_two] == 1:
-            
-    #         winner = 
-    #     elif rpsls_table[player_one][player_two] == 2:
-    #         print("Rock crushes scissors")
-    #         winner = player_one
-    #     elif rpsls_table[player_one][player_two] == :
-    #         pass
-    #     elif rpsls_table[player_one][player_two] == :
-    #         pass
-    
-    
-    @staticmethod
-    def gesture_win_or_lose(player_one_gesture, player_two_gesture):
-        winner = ''
-        
-        if player_one_gesture == player_two_gesture:
-            print("   Tie")
-            winner = 'No one wins'
-            
-        elif player_one_gesture == "Rock":
-            if player_two_gesture == "Scissors":
-                print("   Rock Breaks Scissors")
-                winner = 'Player 1'
-            elif player_two_gesture == "Paper":
-                print("   Paper Covers Rock")
-                winner = 'Player 2'
-            elif player_two_gesture == "Lizard":
-                print("   Rock Crushes Lizard!")
-                winner = 'Player 1'
-            elif player_two_gesture == "Spock":
-                print("   Spock Vaporizes Rock!")
-                winner = 'Player 2'
-                
-        elif player_one_gesture == "Paper":
-            if player_two_gesture == "Rock":
-                print("   Paper Covers Rock!")
-                winner = 'Player 1'
-            elif player_two_gesture == "Scissors":
-                print("   Scissors Cuts Paper!")
-                winner = 'Player 2'
-            elif player_two_gesture == "Spock":
-                print("   Paper Disproves Spock")
-                winner = 'Player 1'
-            elif player_two_gesture == "Lizard":
-                print("   Lizard Eats Paper!")
-                winner = 'Player 2'
-            
-        elif player_one_gesture == "Scissors":
-            if player_two_gesture == "Paper":
-                print("   Scissors Cut Paper!")
-                winner = 'Player 1'
-            elif player_two_gesture == "Rock":
-                print("   Rock Crushes Scissors!")
-                winner = 'Player 2'
-            elif player_two_gesture == "Lizard":
-                print("   Scissors Decapitate Lizard!")
-                winner = 'Player 1'
-            elif player_two_gesture == "Spock":
-                print("   Spock Smashes Scissors")
-                winner = 'Player 2'      
-    
-        elif player_one_gesture == "Spock":
-            if player_two_gesture == "Rock":
-                print("   Spock Vaporizes Rock!")
-                winner = 'Player 1'
-            elif player_two_gesture == "Paper":
-                print("   Paper Disproves Spock!")
-                winner = 'Player 2'
-            elif player_two_gesture == "Scissors":
-                print("   Spock Smashes Scissors")
-                winner = 'Player 1'
-            elif player_two_gesture == "Lizard":
-                print("   Lizard Poisons Spock!")
-                winner = 'Player 2'     
-    
-        elif player_one_gesture == "Lizard":
-            if player_two_gesture == "Paper":
-                print("   Lizard Eats Paper!")
-                winner = 'Player 1'
-            elif player_two_gesture == "Rock":
-                print("   Rock Crushes Lizard!")
-                winner = 'Player 2'
-            elif player_two_gesture == "Spock":
-                print("   Lizard Poisons Spock")
-                winner = 'Player 1'
-            elif player_two_gesture == "Scissors":
-                print("   Scissors Decapitate Lizard!")
-                winner = 'Player 2'
-    
         return winner

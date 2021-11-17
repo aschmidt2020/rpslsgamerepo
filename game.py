@@ -46,7 +46,7 @@ class PlayGame:
                 
                 num_players_valid = True
         
-    #& A very large and somewhat redundant loop that will be cleaned up, but for the moment functions in printing the correct results for each input possibility
+    #^ Runs the game play method out of the gestures file, prompts users to input their move then then will display the score and progress
         
     def play_game(self):
         round = 1
