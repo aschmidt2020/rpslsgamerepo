@@ -1,4 +1,3 @@
-# from utilities import Utilities
 class Gestures:
     
     #* Array reader method scans through an array of verbs then the numbered variables to determine the winner of each round
