@@ -1,6 +1,7 @@
 from computer_player import ComputerPlayer
 from human_player import HumanPlayer
 from utilities import Utilities
+from gestures import Gestures
 
 #^ This class holds the gameplay, which runs through a large loop to determine the winner
 
@@ -62,78 +63,15 @@ class PlayGame:
             
             print('\nRound Result: ')
             
-            if player_one_gesture == player_two_gesture:
-                    print("   Tie")
-            elif player_one_gesture == "Rock":
-                if player_two_gesture == "Scissors":
-                    print("   Rock Breaks Scissors")
-                    self.player_one.score += 1
-                elif player_two_gesture == "Paper":
-                    print("   Paper Covers Rock")
-                    self.player_two.score += 1
-                elif player_two_gesture == "Lizard":
-                    print("   Rock Crushes Lizard!")
-                    self.player_one.score += 1
-                elif player_two_gesture == "Spock":
-                    print("   Spock Vaporizes Rock!")
-                    self.player_two.score += 1
-                    
-            elif player_one_gesture == "Paper":
-                if player_two_gesture == "Rock":
-                    print("   Paper Covers Rock!")
-                    self.player_one.score += 1
-                elif player_two_gesture == "Scissors":
-                    print("   Scissors Cuts Paper!")
-                    self.player_two.score += 1
-                elif player_two_gesture == "Spock":
-                    print("   Paper Disproves Spock")
-                    self.player_one.score += 1
-                elif player_two_gesture == "Lizard":
-                    print("   Lizard Eats Paper!")
-                    self.player_two.score += 1
-                
-            elif player_one_gesture == "Scissors":
-                if player_two_gesture == "Paper":
-                    print("   Scissors Cut Paper!")
-                    self.player_one.score += 1
-                elif player_two_gesture == "Rock":
-                    print("   Rock Crushes Scissors!")
-                    self.player_two.score += 1
-                elif player_two_gesture == "Lizard":
-                    print("   Scissors Decapitate Lizard!")
-                    self.player_one.score += 1
-                elif player_two_gesture == "Spock":
-                    print("   Spock Smashes Scissors")
-                    self.player_two.score += 1       
-        
-            elif player_one_gesture == "Spock":
-                if player_two_gesture == "Rock":
-                    print("   Spock Vaporizes Rock!")
-                    self.player_one.score += 1
-                elif player_two_gesture == "Paper":
-                    print("   Paper Disproves Spock!")
-                    self.player_two.score += 1
-                elif player_two_gesture == "Scissors":
-                    print("   Spock Smashes Scissors")
-                    self.player_one.score += 1
-                elif player_two_gesture == "Lizard":
-                    print("   Lizard Poisons Spock!")
-                    self.player_two.score += 1       
-        
-            elif player_one_gesture == "Lizard":
-                if player_two_gesture == "Paper":
-                    print("   Lizard Eats Paper!")
-                    self.player_one.score += 1
-                elif player_two_gesture == "Rock":
-                    print("   Rock Crushes Lizard!")
-                    self.player_two.score += 1
-                elif player_two_gesture == "Spock":
-                    print("   Lizard Poisons Spock")
-                    self.player_one.score += 1
-                elif player_two_gesture == "Scissors":
-                    print("   Scissors Decapitate Lizard!")
-                    self.player_two.score += 1       
+            round_winner = Gestures.gesture_win_or_lose(player_one_gesture, player_two_gesture)
             
+            if round_winner == 'Player 1':
+                self.player_one.score +=1
+            elif round_winner == 'Player 2':
+                self.player_two.score += 1
+            elif round_winner == 'No one wins':
+                continue
+                  
             print(f"   {self.player_one.name}'s score: {self.player_one.score}, {self.player_two.name}'s score: {self.player_two.score}")
             round = round + 1
        
