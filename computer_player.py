@@ -13,5 +13,5 @@ class ComputerPlayer(Player):
         
     def choose_gesture(self):
         gesture = random.choice(Utilities.gesture_list)
-        print(gesture)
+        print(f"   {self.name}'s gesture: {gesture}")
         return gesture
