@@ -1,5 +1,21 @@
 class Gestures:
     
+    #*changes player gesture to an index number used in function below
+    
+    @staticmethod
+    def gesture_to_num(player_gesture):
+        if player_gesture == 'Rock':
+            player_gest_num = 0
+        elif player_gesture == 'Paper':
+            player_gest_num = 1
+        elif player_gesture == 'Scissors':
+            player_gest_num = 2
+        elif player_gesture == 'Lizard':
+            player_gest_num = 3
+        elif player_gesture == 'Spock':
+            player_gest_num = 4
+        
+        return player_gest_num
     #* Array reader method scans through an array of verbs then the numbered variables to determine the winner of each round
     
     @staticmethod    
@@ -20,30 +36,11 @@ class Gestures:
                        [0, 3, 2, -1, 3], 
                        [4, 1, 4, 3, -1]]
         
-        if player_one_gesture == 'Rock':
-            player_one = 0
-        elif player_one_gesture == 'Paper':
-            player_one = 1
-        elif player_one_gesture == 'Scissors':
-            player_one = 2
-        elif player_one_gesture == 'Lizard':
-            player_one = 3
-        elif player_one_gesture == 'Spock':
-            player_one = 4
+        player_one = Gestures.gesture_to_num(player_one_gesture) #gets index number of player gesture
+        player_two = Gestures.gesture_to_num(player_two_gesture)
             
-        if player_two_gesture == 'Rock':
-            player_two = 0
-        elif player_two_gesture == 'Paper':
-            player_two = 1
-        elif player_two_gesture == 'Scissors':
-            player_two = 2
-        elif player_two_gesture == 'Lizard':
-            player_two = 3
-        elif player_two_gesture == 'Spock':
-            player_two = 4
-            
-        winner = rpsls_table[player_one][player_two]
-        winner_verb = rpsls_statements[player_one][player_two]
+        winner = rpsls_table[player_one][player_two] #compares against table to get winning player index number
+        winner_verb = rpsls_statements[player_one][player_two] #compares against table to get winning player statement/verb
         
         #! Interpolates who wins and prints the results with the correct verbiage, while also ticking up the score.
         
